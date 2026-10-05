@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>✦ Donde mi alma te elige una vez más ✦</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap');
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 50% 25%, rgba(139,92,246,.13), transparent 30%),
+        radial-gradient(circle at 20% 80%, rgba(236,72,153,.08), transparent 28%),
+        linear-gradient(145deg,#080710,#0d0914 45%,#050509);
+    color:#f4e9d7;
+    font-family:'Cormorant Garamond',serif;
+    overflow-x:hidden;
+}
+
+/* Brillo ambiental */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background:
+        radial-gradient(circle at 50% 50%, transparent 20%, rgba(0,0,0,.38) 100%);
+    z-index:0;
+}
+
+/* Huellitas */
+
+.paw{
+    position:fixed;
+    color:rgba(214,175,110,.11);
+    font-size:30px;
+    transform:rotate(-18deg);
+    pointer-events:none;
+    user-select:none;
+    z-index:0;
+    animation:floatPaw 8s ease-in-out infinite;
+}
+
+.p1{top:9%;left:7%;}
+.p2{top:20%;right:9%;font-size:23px;transform:rotate(22deg);animation-delay:1s;}
+.p3{top:48%;left:3%;font-size:22px;transform:rotate(15deg);animation-delay:2s;}
+.p4{top:67%;right:6%;font-size:28px;transform:rotate(-25deg);animation-delay:3s;}
+.p5{bottom:8%;left:12%;font-size:24px;transform:rotate(20deg);animation-delay:4s;}
+.p6{bottom:16%;right:16%;font-size:20px;transform:rotate(-12deg);animation-delay:5s;}
+
+@keyframes floatPaw{
+    0%,100%{opacity:.35;transform:translateY(0) rotate(-18deg);}
+    50%{opacity:.8;transform:translateY(-9px) rotate(-12deg);}
+}
+
+/* Contenedor */
+
+.poem-wrap{
+    position:relative;
+    z-index:2;
+    width:min(92%,720px);
+    margin:0 auto;
+    padding:45px 0 55px;
+}
+
+/* Cabecera */
+
+.header{
+    text-align:center;
+    margin-bottom:28px;
+    animation:appear 1.4s ease both;
+}
+
+.cat{
+    width:72px;
+    height:58px;
+    margin:0 auto 17px;
+    position:relative;
+}
+
+/* Silueta gatuna */
+
+.cat-head{
+    position:absolute;
+    width:48px;
+    height:42px;
+    background:linear-gradient(145deg,#d6af6e,#9b7440);
+    border-radius:50% 50% 46% 46%;
+    left:12px;
+    bottom:0;
+    box-shadow:0 0 25px rgba(214,175,110,.22);
+}
+
+.cat-head::before,
+.cat-head::after{
+    content:"";
+    position:absolute;
+    top:-10px;
+    width:19px;
+    height:22px;
+    background:#b78b50;
+}
+
+.cat-head::before{
+    left:0;
+    clip-path:polygon(0 100%,10% 0,100% 100%);
+}
+
+.cat-head::after{
+    right:0;
+    clip-path:polygon(0 100%,90% 0,100% 100%);
+}
+
+.eye{
+    position:absolute;
+    width:5px;
+    height:5px;
+    background:#20140c;
+    border-radius:50%;
+    top:18px;
+}
+
+.eye.left{left:13px;}
+.eye.right{right:13px;}
+
+.nose{
+    position:absolute;
+    width:5px;
+    height:4px;
+    background:#4d2830;
+    border-radius:50%;
+    left:21px;
+    top:26px;
+}
+
+.title{
+    font-size:clamp(25px,7vw,42px);
+    line-height:1.1;
+    letter-spacing:2px;
+    color:#e8c887;
+    text-shadow:
+        0 0 15px rgba(232,200,135,.18);
+}
+
+.line{
+    width:80px;
+    height:1px;
+    margin:18px auto 0;
+    background:linear-gradient(90deg,transparent,#d6af6e,transparent);
+}
+
+/* Carta */
+
+.poem{
+    position:relative;
+    padding:35px clamp(23px,6vw,55px);
+    background:
+        linear-gradient(135deg,
+        rgba(255,255,255,.035),
+        rgba(255,255,255,.012));
+    border:1px solid rgba(214,175,110,.18);
+    border-radius:24px;
+    box-shadow:
+        0 25px 80px rgba(0,0,0,.48),
+        inset 0 0 40px rgba(214,175,110,.025);
+    backdrop-filter:blur(8px);
+    animation:appear 1.8s ease both;
+}
+
+/* Esquinas decorativas */
+
+.poem::before,
+.poem::after{
+    content:"✦";
+    position:absolute;
+    color:rgba(214,175,110,.55);
+    font-size:14px;
+}
+
+.poem::before{
+    top:15px;
+    left:18px;
+}
+
+.poem::after{
+    bottom:15px;
+    right:18px;
+}
+
+.poem p{
+    font-size:clamp(19px,5vw,24px);
+    line-height:1.72;
+    text-align:center;
+    margin-bottom:22px;
+    color:#eee2d0;
+}
+
+.nickname{
+    color:#d8b875;
+    font-weight:600;
+    font-size:clamp(21px,5.5vw,27px);
+    margin-bottom:28px !important;
+}
+
+.love{
+    color:#f0cfa0;
+    font-weight:700;
+    font-size:clamp(25px,7vw,34px) !important;
+    letter-spacing:2px;
+    margin:28px 0 !important;
+    text-shadow:0 0 18px rgba(240,207,160,.2);
+}
+
+.final{
+    margin-top:25px;
+    color:#dcb878 !important;
+    font-size:clamp(19px,5vw,25px) !important;
+    font-weight:600;
+}
+
+.signature{
+    margin-top:34px !important;
+    margin-bottom:0 !important;
+    font-family:'Montserrat',sans-serif;
+    font-size:clamp(13px,3.7vw,16px) !important;
+    letter-spacing:2px;
+    color:#d6af6e !important;
+    font-weight:600;
+}
+
+/* Separadores */
+
+.mini-paw{
+    color:#b68b51;
+    font-size:16px;
+    letter-spacing:10px;
+    text-align:center;
+    margin:25px 0;
+    opacity:.7;
+}
+
+/* Entrada */
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* Móvil */
+
+@media(max-width:500px){
+
+    .poem-wrap{
+        padding-top:32px;
+        width:94%;
+    }
+
+    .poem{
+        padding:30px 19px;
+        border-radius:20px;
+    }
+
+    .poem p{
+        line-height:1.65;
+        margin-bottom:19px;
+    }
+
+    .paw{
+        font-size:22px;
+    }
+}
+
+/* Reduce movimiento si el dispositivo lo solicita */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none !important;
+        transition:none !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Huellitas gatunas -->
+
+<div class="paw p1">🐾</div>
+<div class="paw p2">🐾</div>
+<div class="paw p3">🐾</div>
+<div class="paw p4">🐾</div>
+<div class="paw p5">🐾</div>
+<div class="paw p6">🐾</div>
+
+<main class="poem-wrap">
+
+    <header class="header">
+
+        <div class="cat">
+            <div class="cat-head">
+                <span class="eye left"></span>
+                <span class="eye right"></span>
+                <span class="nose"></span>
+            </div>
+        </div>
+
+        <h1 class="title">
+            ✦ DONDE MI ALMA TE ELIGE UNA VEZ MÁS ✦
+        </h1>
+
+        <div class="line"></div>
+
+    </header>
+
+
+    <article class="poem">
+
+        <p class="nickname">
+            Mi Amada Dueña de Mis Latidos,
+        </p>
+
+        <p>
+            Desde muy temprano dejé mi amor aquí,<br>
+            esperando pacientemente por ti,<br>
+            como si cada palabra supiera<br>
+            que tarde o temprano tus ojos llegarían.
+        </p>
+
+        <div class="mini-paw">🐾 ✦ 🐾</div>
+
+        <p>
+            Puedes encontrarme al despertar,<br>
+            cuando el sol apenas acaricie tu rostro,<br>
+            o en cualquier momento de este domingo;<br>
+            no importa la hora, mi amor,<br>
+            porque mi corazón no tiene horarios<br>
+            cuando se trata de esperarte.
+        </p>
+
+        <p>
+            Quiero que sepas algo sencillo,<br>
+            pero inmenso:
+        </p>
+
+        <p class="love">
+            te amo.
+        </p>
+
+        <p>
+            Te amo con esa intensidad<br>
+            que no sabe quedarse pequeña,<br>
+            con esas ganas de abrazarte<br>
+            hasta que el mundo deje de existir alrededor,<br>
+            con ese deseo de seguir descubriendo<br>
+            cada rincón de tu corazón<br>
+            y enamorarme de ti una y otra vez.
+        </p>
+
+        <div class="mini-paw">🐾 ✦ 🐾</div>
+
+        <p>
+            Y si alguna vez te preguntas<br>
+            dónde está mi lugar favorito,<br>
+            no busques demasiado...
+        </p>
+
+        <p class="love">
+            está donde estés tú.
+        </p>
+
+        <p>
+            Porque entre todos los caminos,<br>
+            todas las mañanas<br>
+            y todos los días que todavía nos faltan,
+        </p>
+
+        <p class="final">
+            mi alma siempre vuelve a elegirte a ti.
+        </p>
+
+        <p class="signature">
+            VALERIA PETRO VILLAZÓN
+        </p>
+
+    </article>
+
+</main>
+
+</body>
+  </html>
